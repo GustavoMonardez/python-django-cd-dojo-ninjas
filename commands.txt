@@ -1,0 +1,33 @@
+
+    1. Create 3 dojos
+	Dojo.objects.create(name="CodingDojo Silicon Valley",city="Mountain View", state="CA")
+	Dojo.objects.create(name="CodingDojo Seattle",city="Seattle", state="WA")
+	Dojo.objects.create(name="CodingDojo New York",city="New York", state="NY")
+    2. Delete the three dojos you created (e.g. Dojo.objects.get(id=1).delete())
+	Dojo.objects.get(id=1).delete()
+	Dojo.objects.get(id=2).delete()
+	Dojo.objects.get(id=3).delete()
+    3. Create 3 additional dojos by using Dojo.objects.create
+	Dojo.objects.create(name="CodingDojo Silicon Valley",city="Mountain View", state="CA")
+	Dojo.objects.create(name="CodingDojo Seattle",city="Seattle", state="WA")
+	Dojo.objects.create(name="CodingDojo New York",city="New York", state="NY")
+    4. Create 3 ninjas that belong to the first dojo you created.
+	Ninja.objects.create(first_name="Elon",last_name="Musk",dojo_id=1)
+	Ninja.objects.create(first_name="Jeff",last_name="Bezos",dojo_id=1)
+	Ninja.objects.create(first_name="Richard",last_name="Branson",dojo_id=1)
+    5. Create 3 more ninjas and have them belong to the second dojo you created.
+	Ninja.objects.create(first_name="Jim",last_name="Rohn",dojo_id=2)
+	Ninja.objects.create(first_name="Tony",last_name="Robbins",dojo_id=2)
+	Ninja.objects.create(first_name="Brendon",last_name="Burchard",dojo_id=2)
+    6. Create 3 more ninjas and have them belong to the third dojo you created.
+	Ninja.objects.create(first_name="John",last_name="Maxwell",dojo_id=3)
+	Ninja.objects.create(first_name="Darren",last_name="Hardy",dojo_id=3)
+	Ninja.objects.create(first_name="Zig",last_name="Zigglar",dojo_id=3)
+    7. Be able to retrieve all ninjas that belong to the first Dojo
+	Dojo.objects.first().ninjas or Dojo.objects.first().ninjas.values()
+    8. Be able to retrieve all ninjas that belong to the last Dojo
+	Dojo.objects.last().ninjas or Dojo.objects.last().ninjas.values()
+
+    # Useful commands:
+	for ninja in Dojo.objects.last().ninjas.values():
+            print(ninja["first_name"]," ",ninja["last_name"])
